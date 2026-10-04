@@ -1,0 +1,31 @@
+# FastAPI & Server
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+
+# Agent Orchestration
+langgraph>=0.1.0
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+
+# Database & Vector Store Connectors
+psycopg2-binary>=2.9.9
+qdrant-client>=1.8.0
+sqlalchemy>=2.0.28
+
+# Document Parsing (PDFs, reports, internal docs)
+docling>=1.0.0
+
+# LLM, Embeddings & Reranking Models
+transformers>=4.38.0
+torch>=2.2.0
+sentence-transformers>=2.5.1
+ollama>=0.1.6
+
+# Utilities & Environment
+python-dotenv>=1.0.1
+requests>=2.31.0
+numpy>=1.26.0
+pandas>=2.2.0

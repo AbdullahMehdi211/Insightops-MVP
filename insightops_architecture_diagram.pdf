@@ -1,0 +1,99 @@
+# InsightOps MVP
+
+An AI-powered business investigation assistant backend and interactive dashboard designed to transform natural language business questions into structured, reproducible data analysis and root-cause findings.
+
+---
+
+## Architecture Overview
+
+InsightOps bridges business queries to multi-source evidence using a modular stack:
+* **API Layer**: FastAPI handling asynchronous request routing and CORS.
+* **Frontend Layer**: Built-in interactive dark-mode dashboard for instant agentic investigation queries.
+* **Orchestration & Tools (Mocked in MVP)**: Designed for LangGraph agent loops interacting with PostgreSQL (SQL execution), Qdrant (vector similarity search), and Docling (unstructured document parsing).
+
+You can review the complete visual multi-agent workflow and layer breakdown in the [System Architecture Diagram](./insightops_architecture_diagram.pdf)[cite: 1].
+
+---
+
+## Project Structure
+
+```text
+KC AI Engineer/
+│
+├── Insightops_MVP.py                 # FastAPI backend server & integrated UI
+├── requirements.txt                  # Core project dependencies
+├── insightops_architecture_diagram.pdf # High-level system architecture & data flow[cite: 1]
+└── .gitignore                        # Ignored files for git version control%PDF-1.4
+%���� ReportLab Generated PDF document http://www.reportlab.com
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 8 0 R /MediaBox [ 0 0 612 792 ] /Parent 7 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+>>
+endobj
+6 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261004145506+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261004145506+00'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+7 0 obj
+<<
+/Count 1 /Kids [ 4 0 R ] /Type /Pages
+>>
+endobj
+8 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1526
+>>
+stream
+Gb!#[9iKe;&A@sBoI8mt_D%V1k_O4dfl@FY]t5(5K0:'VqX@*4'`WVd)Te;L6HTG2@M_Qm*d,6^I]pB&JDunqrtdE*BF`'q$lFcq*AC&1bU;ms559'3lCF)jcS]U[2+!SZ>QUT"AUt)>H.&T3A?,_L@U%T#/Om>l3%aN<?<S@U,^Ho20.tj:bb"FC`c.(mm_cmoMG7\I_u'Pt?V9K[r,r*;klC's@?p6F%$`K_I4YU),,u.badDNGKF#I[d/DA152$:VDk\F<3a(.3kb*H%0K+W9ZRC6REG/C@M;`&kQ_cFT2N(;>,Z4>MDa+14YOK=@Zjp1\'b*!]^nZ\nY<GF7PlXNsZgp@Q$:f>0f6:R+['JZ-\N?!:@j`e:KRTGPnpo.APMpn._1XK8P/<Z`0X`d[3@0i/r-?#0+X:qEKk3q)k1O@k&W\ubp(#<[J1(uAKJW")j@pUR_GW-S)bjdJ_@mD#K:mpYHGia5Wo;bfhhQ^J/Y&oo;7J;KQmS2jCMO^)/g3a@VtT&CC&MhG:aZ:oD,;T](N9eX$^di+<6$]M!GXjG_Xf/S4Ud,P3)c2/=[Q&H1Y:dlL2hWVQkEJ*_4(^BeJbQVBP40L`VnG7DRqJRcR%fZKpCQB/#_D1%UJ"Z+_qoGV.22c%qdS_n%iBYYUjWO_?la%_EOCNQQ5G[qZ2QJ6a:.E4ti996m1@/iiWgrXq(,DX(KPCabu<:%FCU'a=R=uaV(Z#Q-Jk2M^)tUB(Hu[T!tZSn[Qmj?'f3$GTa6q8e4.8QV!Pn`sB?R)3_L5g.\L_H^LTkYD5\)cs%i^q*bY@n9drmq[JfQmAP]i_l4pS4&CcZMGUDo.L?0CfG\R4A?OE]KYhP"9X6_*bkf&EREi-'TU1m+oQ#ZWc..Va8siSK)S(KkB&K*tQH=5I+T,`ZMG02cX:;mRUT\/+@NfAJ-!COjN#0S\64?pJZoa@`!N0On><#2JoScsej(t31V6K\b<H9;1l_.4YB,2IhOoduhk$+Y=*lFgK(?NJRD&6n+UOK8MF9&f+p?At'%VhCEaos8i.p#]&P9&NX9Wm,%D7S5U4`ZfkpW7QIlC]X!,f#im'WT]_p\.Ocp2LSu(4Jh[o5-n\nl.5a'%2'h/Mc_RQ6\LNS6P#q&V\=6Y"Y-+j9kk1n?2tK];^P4A[u@cQa9*5)9-;pC:1^g-J:SuMD3H!r;adBkldk&Rlr]<B03&e9cbY6Ypqn)PnHanj&$&%g[ASI<>q.k^B(X"9i?WP]J3M')rQ5+\<"&f'24a\WHrFWCT#Xi*VKqZY*XFqoS.9NFFRp"8EmFoR8(c"Q0A&jW0u=f1[/p4M!sk'\r+"aY*Ud^m7m$p<?[KUia<O-V0T>gCru^+dXS_p(+rpV*tQo!<874=1g,j'D46I%?*h.TqfmeX:H*Q]ii=W#=hD>c\aq>q2X>LS@Bg5\$8(hP0M,?:;U[OO@,"\[OMb(FH2E,R@>:`*b2UW#'BO1@T!0Bu&5rc,[F3^u\h@>m&m!q;<mBQK%/iHY_VfpA<r:J~>endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000073 00000 n 
+0000000114 00000 n 
+0000000221 00000 n 
+0000000333 00000 n 
+0000000526 00000 n 
+0000000594 00000 n 
+0000000877 00000 n 
+0000000936 00000 n 
+trailer
+<<
+/ID 
+[<aba578d9da75e11c73115ee115c14a14><aba578d9da75e11c73115ee115c14a14>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 6 0 R
+/Root 5 0 R
+/Size 9
+>>
+startxref
+2553
+%%EOF
